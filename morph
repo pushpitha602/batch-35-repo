@@ -1,0 +1,9 @@
+{%load static%}
+<!DOCTYPEhtml>
+<htmllang="zxx">
+<head>
+<metacharset="utf-8">
+<title>Dtox</title>
+<!--mobileresponsivemeta-->
+<metaname="viewport"content="width=device-width,initial-scale=1">
+<metaname="viewport"content="width=device-width,initial-scale=1,maximum-scale="1">

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .header {
+            background-color: #e9e9e9;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #0000ee;
+            cursor: pointer;
+        }
+        .content {
+            padding: 20px 0;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <strong>EMPLOYEE MANAGEMENT SYSTEM</strong>
+            <div class="nav">
+                <a onclick="showPage('home')">About</a>
+                <a onclick="showPage('contact')">Contact</a>
+                <a onclick="showPage('login')">Login</a>
+                <a onclick="showPage('register')">Register</a>
+            </div>
+        </div>
+
+        <div id="home" class="page active">
+            <div class="content">
+                <h1>Welcome To Home Page</h1>
+            </div>
+        </div>
+
+        <div id="contact" class="page">
+            <div class="content">
+                <h1>Welcome To Contact Page</h1>
+                <p>Mobile: </p>
+                <p>Website Name: </p>
+                <p>mail-id: </p>
+            </div>
+        </div>
+
+        <div id="about" class="page">
+            <div class="content">
+                <h1>Welcome To About Us....Page</h1>
+                <h3>About</h3>
+                <p>Spring Boot is a project that is built on the top of the Spring Framework. It provides an easier and faster way to set up, configure, and run both simple and web-based applications.</p>
+            </div>
+        </div>
+
+        <div id="login" class="page">
+            <div class="content">
+                <h1>Employee Login Form</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="loginName">Name:</label>
+                        <input type="text" id="loginName">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword">
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="register" class="page">
+            <div class="content">
+                <h1>Employee Registration Form</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="regName">Name:</label>
+                        <input type="text" id="regName">
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Password:</label>
+                        <input type="password" id="regPassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email:</label>
+                        <input type="email" id="regEmail">
+                    </div>
+                    <div class="form-group">
+                        <label>Gender:</label><br>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="regMobile">Mobile No:</label>
+                        <input type="text" id="regMobile">
+                    </div>
+                    <div class="form-group">
+                        <label for="regAddress">Address:</label>
+                        <textarea id="regAddress"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
